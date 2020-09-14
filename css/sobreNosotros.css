@@ -41,7 +41,7 @@ html, body {
 }
 
 .logo {
-  height: 50%;
+  height: 100%;
 }
 
 h2 {
@@ -56,6 +56,10 @@ p {
 
 a:hover {
   color: white;
+}
+
+a {
+  height: 70%;
 }
 
 
