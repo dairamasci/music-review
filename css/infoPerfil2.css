@@ -48,6 +48,7 @@ html, body {
 }
 
 .datos__hijos {
+  position: relative;
   width: 45%;
   display: flex;
   flex-direction: column;
@@ -114,4 +115,17 @@ a:hover {
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
+}
+
+.boton{ 
+  position: relative;
+  top:0;
+  left:0;
+  margin-top:-9%;
+  margin-left:39%;
+  display:table;
+}
+
+.btn-secondary {
+  background-color: darksalmon !important;
 }
