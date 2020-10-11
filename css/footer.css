@@ -1,0 +1,25 @@
+.bgNegro__footer {
+  background: #151F2A;
+}
+
+.logoMusicReview__footer {
+  width: 65%;
+}
+
+.logoEscuelaUrquiza__footer {
+  width: 65%;
+}
+
+.textFooter__footer {
+  font-size: small;
+}
+
+.colorNaranja__footer {
+  color: #FF8546 !important;
+  font-weight: bold;
+}
+
+.hrFooter__footer {
+  border-top: 0.1px solid whitesmoke;
+  width: 35%;
+}

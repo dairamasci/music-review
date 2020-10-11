@@ -21,7 +21,7 @@ html, body {
   z-index: -100;
 }
 
-.container-1 {
+body > .container-1__perfil {
   flex-flow: column;
   align-items: center;
   display: flex;
@@ -30,7 +30,7 @@ html, body {
   height: 100%;
 }
 
-.datos {
+.container__perfil > .datos__perfil {
   display: flex;
   justify-content: space-evenly;
   height: 100%;
@@ -38,7 +38,7 @@ html, body {
   padding: 0;
 }
 
-.container_ {
+.container-1__perfil > .container__perfil {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +47,7 @@ html, body {
   margin: 10px;
 }
 
-.datos__hijos {
+.datos__perfil > .datos__hijos__perfil {
   position: relative;
   width: 45%;
   display: flex;
@@ -55,7 +55,7 @@ html, body {
   align-items: center;
 }
 
-.insignia {
+.container__perfil > .insignia__perfil {
   display: flex;
   justify-self: flex-start;
   align-items: center;
@@ -63,13 +63,13 @@ html, body {
   width: 100%;
 }
 
-.form {
+.datos__hijos__perfil > .form {
   height: 100%;
   width: 100%;
   padding-top: 23%;
 }
 
-h4 {
+.info-user__perfil > h4 {
   font-weight: bold;
   color: #FF8546;
   font-size: medium;
@@ -87,12 +87,12 @@ a:hover {
   color: white;
 }
 
-.img {
+.img__perfil {
   width: 15%;
   align-self: center;
 }
 
-.perf {
+.perf__perfil {
   width: 50%;
 }
 
@@ -100,7 +100,7 @@ a:hover {
   height: 25px;
 }
 
-.info-user {
+.info-user__perfil {
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -110,14 +110,14 @@ a:hover {
   margin-left: 100px;
 }
 
-.eliminar-cuenta {
+.eliminar-cuenta__perfil {
   width: 100%;
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
 }
 
-.boton{ 
+.boton__perfil { 
   position: relative;
   top:0;
   left:0;
