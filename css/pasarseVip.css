@@ -3,9 +3,9 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
   width: 100%;
 }
 
@@ -21,69 +21,73 @@ html, body {
   z-index: -100;
 }
 
-.container-1 {
+.container-1__pasarseVip {
   align-items: center;
   display: flex;
-  justify-content: center;
-  width: 100%;
   height: 100%;
+  justify-content: center;
   padding: 20px;
-  /* height: calc(100% - 80px); */
+  width: 100%;
 }
 
-.container__hijos {
-  display: flex;
-  justify-content: space-evenly;
+.container__hijos__pasarseVip {
   align-items: center;
+  display: flex;
   height: fit-content;
-  width: 45%;
+  justify-content: space-evenly;
   margin: 10px;
   padding: 20px;
+  width: 45%;
 }
 
-.logo {
+.logo__pasarseVip {
   height: 175px;
 }
 
-h2 {
+.container__pasarse-vip > h2 {
+  color: #F1F1F1;
   font-weight: bold;
+}
+
+.container__precio__pasarseVip > p, h1 {
   color: #F1F1F1;
 }
 
-p, h1, a {
+.comprar_vip > a {
   color: #F1F1F1;
 }
 
-a:hover {
+.comprar_vip > a:hover {
   color: white;
 }
 
 
 .container__pasarse-vip {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;;
   align-items: center;
   background-color: rgb(255, 255, 255, 0.13) ;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;;
+  height: 100%;
   padding: 40px;
+  width: 100%;
 }
 
 .btn-width {
   width: 30%;
 }
 
-.container__precio {
+.container__precio__pasarseVip {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-items: center;
   margin: 10px 0;
 }
 
-.texto-sin {
+.texto-sin__pasarseVip {
+  align-items: center;
+  color: #F1F1F1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin: 5px 0 0 0;
 }

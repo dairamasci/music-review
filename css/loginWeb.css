@@ -21,17 +21,16 @@ html, body {
   z-index: -100;
 }
 
-.container-1 {
+body > .container-1__web {
   align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 100%;
   padding: 20px;
-  /* height: calc(100% - 80px); */
 }
 
-.container__hijos {
+.container-1__web > .container__hijos__web {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -41,27 +40,28 @@ html, body {
   padding: 20px;
 }
 
-.logo {
+.container__hijos__web > .logo__web {
   height: 70%;
 }
 
-h2 {
+.container__iniciar-sesion__web > h2 {
   font-weight: bold;
   color: #FF8546;
 }
 
-p {
+.container__iniciar-sesion__web, .form > p {
   color: white;
 }
 
 a {
   color: white;
 }
+
 a:hover {
   color: #FF8546;
 }
 
-.container__iniciar-sesion {
+.container__iniciar-sesion__web {
   width: 100%;
   height: 100%;
   display: flex;
