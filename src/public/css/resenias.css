@@ -1,0 +1,152 @@
+.video-fondo {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: -100;
+}
+
+.container__resenias {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.container_contenido {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+}
+
+.container_resenias_izq {
+  margin: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+
+.container_resenias_publi {
+  height: 100%;
+  width: 500px;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.container_img_publi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_publi {
+  width: 80%;
+}
+
+.container_res_ind {
+  width: 100%;
+  height: 200px;
+  background-color: rgb(255, 255, 255, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container_res_ind__resenia {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container_res_ind__datos {
+  height: 20%;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.hr__separator_res {
+  border-top: 0.1px solid rgb(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.div_foto_res {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.div_res {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.div_bot_res {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.img_foto_res {
+  width: 85%;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.h4_titulo_res {
+  color: white;
+  font-weight: bolder;
+}
+
+.p_nombre_banda {
+  color: white;
+  font-size: medium;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.p_500_res {
+  color: white;
+  overflow: hidden;
+}
+
+.div_cont_res {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.nav_filtros {
+  display: flex;
+  align-items: top;
+  width: 100%;
+  height: 60px;
+  padding: 0 70px;
+  margin-top: 40px;
+}
+
+.btn_nueva_res {
+  height: 90%;
+}

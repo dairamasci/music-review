@@ -1,0 +1,77 @@
+<!-- Contenedor principal -->
+<div class="container__resenias">
+
+    <div class="nav_filtros">
+      <a href="/nuevaResenia" class="btn_nueva_res">
+        <img src="/public/images/botonCrearNuevo.png" alt="Crear nueva reseña" class="btn_nueva_res">
+      </a>
+    </div>
+
+  <div class="container_contenido">
+    <div class="container_resenias_izq">
+    {{#each datosResenia}}    
+      {{!-- primer reseña --}}
+      <div class="container_res_ind">
+        <div class="container_res_ind__resenia">
+          <div class="div_foto_res">
+            <img src="/public/images/bandaEjemplo1.jpg" alt="Foto de reseña" class="img_foto_res">
+          </div>
+
+          <div class="div_res">
+            <h4 class="h4_titulo_res">{{titulo}}</h4>
+            <div class="div_cont_res">
+              <p class="p_nombre_banda">{{nombre}}</p>
+              <p class="p_500_res">
+                {{contenido}}
+              </p>
+            </div>
+          </div>
+
+          <div class="div_bot_res">
+            <a href="">
+              <i class="fab fa-font-awesome-flag fa-lg text-white mb-4"></i>
+            </a>
+            <a href="">
+              <i class="fas fa-share-alt fa-lg text-white mb-4"></i>
+            </a>
+            <a href="">
+              <i class="fas fa-comment-dots fa-lg text-white"></i>
+            </a>
+          </div>
+        </div>
+        
+        <hr class="hr__separator_res my-0">
+        
+        <div class="container_res_ind__datos">
+          <small>
+            {{puntuacion}} ptos. | {{usuario_creador}} | Rango usuario creador | {{fecha_creacion}} | {{desc_categoria}}
+          </small>
+        </div>
+
+      </div> 
+    {{/each}}
+    </div>
+
+    <div class="container_resenias_publi">
+    {{!-- <div class="container_resenias_publi" style="display: none;"> --}}
+      <div class="container_img_publi">
+        <img src="/public/images/publicidad1.png" alt="Publicidad" class="img_publi mb-4">
+        <img src="/public/images/publicidad2.png" alt="Publicidad" class="img_publi mt-2">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Video de fondo -->
+<video
+  autoplay
+  loop
+  poster="/public/images/fondoReseñas.png"
+  muted
+  class="video-fondo"
+>
+  <!-- Distintas resoluciones  -->
+  <source src="/public/media/fondoReviews.mp4" type="video/webm" />
+  <source src="/public/media/fondoReviews.mp4" type="video/mp4" />
+</video>

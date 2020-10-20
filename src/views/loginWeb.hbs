@@ -1,0 +1,64 @@
+<div class="container-1__web">
+  <!-- Contenedor del logo -->
+  <div class="container__hijos__web mr-5">
+      <img src="/public/images/logoOscuroLB.png" alt="" srcset="" class="logo__web animated rubberBand delay-1s">
+  </div>
+  <!-- Contenedor del login -->
+  <div class="container__hijos__web ml-5">
+    <div class="container__iniciar-sesion__web">
+      <h2>Iniciar Sesión</h2>
+      <p>Inicia sesión para más funcionalidades</p>
+
+      <!-- Formulario -->
+      <form class="text-center form" action="/loginWeb" method="POST">
+        <!-- Email -->
+        <input 
+          type="email" 
+          id="" 
+          class="form-control mb-2" 
+          placeholder="Email" 
+          name="email"
+        >
+        <!-- Contraseña -->
+        <input 
+          type="password" 
+          id="" 
+          class="form-control mb-2" 
+          placeholder="Contraseña" 
+          name="contrasenia"
+        >
+        <!-- Boton iniciar sesion -->
+        <button 
+          class="btn btn-info btn-block btn-blue-grey my-3" 
+          type="submit"
+        >
+          Iniciar sesión
+        </button>
+        
+        <!-- Link que enviará la contraseña por mail -->
+        <a href="#">Olvidé mi contraseña</a>
+
+        <!-- Registrarse -->
+        <p class="my-3 font-weight-bold">
+          ¿No tienes cuenta?
+          <a href="/crearCuenta">
+            ¡Crea una aquí!
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Video de fondo -->
+<video
+  autoplay
+  loop
+  poster="/public/images/fondoLogin.png"
+  muted
+  class="video-fondo"
+>
+  <!-- Distintas resoluciones  -->
+  <source src="/public/media/fondoLoginSignin.mp4" type="video/webm" />
+  <source src="/public/media/fondoLoginSignin.mp4" type="video/mp4" />
+</video>
