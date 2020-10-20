@@ -1,0 +1,173 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.video-fondo {
+  height: auto;
+  left: 50%;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  z-index: -100;
+}
+
+body > .container-1__web {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.container-1__web > .container__hijos-izq__nueva-r {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 40%;
+  margin: 10px;
+  padding: 20px;
+}
+
+.container-1__web > .container__hijos-der__nueva-r {
+  display: flex;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  height: 50%;
+  width: 20%;
+  margin: 10px;
+  padding: 20px;
+  /* position: absolute; */
+}
+
+.container__hijos-der__nueva-r > .my-class {
+  width: fit-content;
+    position: relative;
+}
+
+.container__hijos-der__nueva-r > .img__reseña {
+  height: 70%;
+  border-style: solid;
+  border-color: white;
+}
+
+.my-class > .img__reseña {
+  width: 100%;
+  border-style: solid;
+  border-color: white;
+}
+
+.my-class > .custom-file {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: unset;
+  right: calc(100% + -85%);
+  cursor: pointer;
+}
+
+.my-icon-class {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-icon-class > .custom-file-input {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+}
+
+.my-icon-class > input[type="file" i] {
+  cursor: pointer;
+}
+
+.my-icon-class > i {
+  position: absolute;
+}
+
+
+.custom-file-upload > input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container__iniciar-sesion__web > h2 {
+  font-weight: bold;
+  color: white;
+}
+
+.container__iniciar-sesion__web, .form > p {
+  color: white;
+}
+
+.custom-file {
+  border-style: solid;
+  border-width: thin;
+  border-color: gray;
+  background-color: whitesmoke;
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  position: relative;
+  top: 100px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #FF8546;
+}
+
+form > ::placeholder {
+  font-size: small;
+}
+
+form > textarea {
+  padding-left: 8px !important;
+}
+
+.container__iniciar-sesion__web {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control:focus {
+  border-color: #FF8546;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.btn-width {
+  width: 40%;
+}
