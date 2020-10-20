@@ -1,0 +1,86 @@
+<div class="container-1__nueva">
+  <!-- Contenedor del login -->
+  <div class="container__hijos-izq__nueva-r ml-5">
+    <div class="container__nueva-resenia">
+      <h2 class="mb-4">Nueva reseña</h2>
+      <!-- Formulario -->
+      <form class="text-center form__resenia" action="/nuevaResenia" method="POST">
+        <!-- Nombre -->
+        <input 
+          type="text" 
+          id="nombre" 
+          class="form-control form-control-sm mb-2" 
+          placeholder="Nombre de la banda, artista, EP, álbum, canción, single..."
+          name="nombre"
+        >
+        <!-- Categoría -->
+        <select 
+          class="custom-select custom-select-sm form-control mb-2" 
+          name="categoria"
+        >
+          <option selected>Categoría</option>
+          <option value="1">Artista</option>
+          <option value="2">EP</option>
+          <option value="3">Álbum</option>
+          <option value="4">Canción</option>
+          <option value="5">Single</option>
+          <option value="6">Banda</option>
+        </select> 
+        <!-- Título -->
+        <input 
+          type="text" 
+          id="titulo" 
+          class="form-control form-control-sm mb-2" 
+          placeholder="Título de la reseña"
+          name="titulo"
+        >
+        <!-- Descripción -->
+        <textarea 
+          name="descripcion" 
+          placeholder="Escribe aquí tu reseña..." 
+          class="form-control rounded-1 mb-2" 
+          rows="8"
+          name="descripcion"
+        ></textarea>
+        
+        <!-- Boton Crear -->
+        <button 
+          class="btn btn-sm btn-info btn-block btn-blue-grey btn-width__resenia my-3" 
+          type="submit"
+        >
+          Crear
+        </button>
+        
+      </form>
+    </div>
+  </div>
+  <!-- Imagen de reseña -->
+  <div class="container__hijos-der__nueva-r mr-5">
+    <div class="my-class">
+      <img src="/public/images/bandaEjemplo1.jpg" alt="" srcset="" class="img__reseña rounded-circle">
+        <div class="d-flex justify-content-center custom-file">
+          <label class="custom-file-upload">
+            <input 
+              type="file"/
+              name="imagen-resenia"
+            >
+            <i class="fas fa-pencil-alt text-gray"></i>
+          </label>
+        </div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- Video de fondo -->
+<video
+  autoplay
+  loop
+  poster="/public/images/fondoCrear.png"
+  muted
+  class="video-fondo"
+>
+  <!-- Distintas resoluciones  -->
+  <source src="/public/media/fondoTimeToWrite.mp4" type="video/webm" />
+  <source src="/public/media/fondoTimeToWrite.mp4" type="video/mp4" />
+</video>

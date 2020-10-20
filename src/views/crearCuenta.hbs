@@ -1,0 +1,163 @@
+<div class="container-1__cuenta">
+  <!-- Contenedor del login -->
+  <div class="container__hijos__cuenta ml-5">
+    <div class="container__crear_cuenta__cuenta">
+      <h2>Crear cuenta</h2>
+      <p class="p__cuenta">Crea una cuenta para más funcionalidades</p>
+
+      <!-- Formulario -->
+      <form class="text-center form" action="/crearCuenta" method="POST">
+        <!-- Email -->
+        <input 
+          type="email" 
+          id="email" 
+          class="form-control form-control-sm mb-2" 
+          placeholder="Email" 
+          name="email"
+        >
+        
+        <!-- Contraseña -->
+        <div class="input-group">
+          <input 
+            type="password" 
+            id="contraseña" 
+            class="form-control form-control-sm mb-2" 
+            placeholder="Contraseña" 
+            name="contrasenia"
+          >
+          <div class="input-group-addon">
+            <a href="#" id="icono-click-c">
+              <i class="fa fa-eye pt-2 px-1 a__cuenta" aria-hidden="true" id="icono-c"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Repetir contraseña -->
+        <div class="input-group">
+          <input 
+            type="password" 
+            id="repetirContraseña" 
+            class="form-control form-control-sm mb-2" 
+            placeholder="Repetir contraseña" 
+            name="repetir_contrasenia"
+          >
+          <div class="input-group-addon">
+            <a class="a__cuenta" href="#" id="icono-click-rc">
+              <i class="fa fa-eye pt-2 px-1" aria-hidden="true" id="icono-rc"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Nombre de usuario -->
+        <input 
+          type="text" 
+          class="form-control form-control-sm mb-2" 
+          placeholder="Nombre de usuario" 
+          aria-label="Nombre de usuario" 
+          aria-describedby="usuario" 
+          name="nombre_usuario"
+        >
+        
+        <!-- Sexo -->
+        <select 
+          class="custom-select custom-select-sm form-control" 
+          name="sexo"
+        >
+          <option selected>
+            Sexo
+          </option>
+          <option value=1>
+            Femenino
+          </option>
+          <option value=2>
+            Masculino
+          </option>
+          <option value=3>
+            Otro
+          </option>
+        </select> 
+
+        <!-- Fecha de nacimiento -->
+        <div class="datepicker__cuenta" >
+          <label for="Fecha de nacimiento" class="label__cuenta mb-1">
+            <small>
+              Fecha de nacimiento
+            </small>
+          </label>
+          <input 
+            placeholder="Fecha de nacimiento" 
+            type="date" 
+            id="fecha" 
+            class="form-control form-control-sm" 
+            name="fecha_nacimiento"
+          >
+        </div>          
+
+        <!-- ¿Administrador? -->
+        <div class="custom-control custom-switch my-2">
+          <input 
+            type="checkbox" 
+            class="custom-control-input" 
+            id="switch-admin" 
+            name="admin"
+          >
+          <label class="custom-control-label label__cuenta" for="switch-admin">
+            <small>
+              ¿Administrador?
+            </small>
+          </label>
+        </div>
+
+        <!-- Código administrador -->
+        <div>
+          <input 
+            type="number"
+            class="form-control form-control-sm" 
+            id="codigoAdmin" 
+            placeholder="Código administrador" 
+            style="display: none;" 
+            name="codigo_admin"
+          >
+        </div>
+
+        <!-- Botones -->
+        <div>
+          <!-- Boton cancelar -->
+          <button 
+            class="btn btn-info btn-blue-grey btn-sm btn-width__cuenta my-3 " 
+            type="submit"
+          >
+            <a class="a__cuenta" href="#">
+              Cancelar
+            </a>
+          </button>
+          <!-- Boton crear cuenta -->
+          <button class="btn btn-info btn-blue-grey btn-sm btn-width__cuenta my-3">
+            Crear cuenta
+          </button>
+        </div>
+
+        <!-- Iniciar sesión -->
+        <p class="my-3 font-weight-bold text-white">
+          ¿Ya tienes cuenta?
+          <a class="a__naranja__cuenta a__cuenta" href="">
+            ¡Inicia sesión aquí!
+          </a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Video de fondo -->
+<video
+  autoplay
+  loop
+  poster="/public/images/fondoLogin.png"
+  muted
+  class="video-fondo"
+>
+  <!-- Distintas resoluciones  -->
+  <source src="/public/media/fondoLoginSignin.mp4" type="video/webm" />
+  <source src="/public/media/fondoLoginSignin.mp4" type="video/mp4" />
+</video>
