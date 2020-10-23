@@ -25,7 +25,6 @@ controller.vistaResenias = async (req, res) => {
   const datosResenia = await pool.query(
     'SELECT r.foto_reseña, r.contenido, r.usuario_creador, r.puntuacion, r.titulo, r.id_absec, r.fecha_creacion, a.id_categoria, a.descripcion as nombre, c.descripcion as desc_categoria FROM resenia r JOIN usuario u ON r.usuario_creador = u.nombreusuario JOIN absec a ON r.id_absec = a.id_absec JOIN categoria as c ON a.id_categoria = c.id_categoria ORDER BY r.fecha_creacion DESC;'
   );
-
   res.render('resenias', { datosResenia });
 };
 
