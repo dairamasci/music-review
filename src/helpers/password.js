@@ -12,7 +12,6 @@ password.encryptPassword = async (password) => {
 
 password.matchPassword = async (password, savedPassword) => {
   try {
-    console.log(await bcrypt.compare(password, savedPassword))
     return await bcrypt.compare(password, savedPassword);
   } catch (e) {
     console.error(e);

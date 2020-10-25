@@ -11,28 +11,22 @@ passport.use('local.signin', new LocalStrategy({
   passwordField: 'contrasenia',
   passReqToCallback: true
 }, async (req, email, contrasenia, done) => {
-  console.log('local.signim', email, contrasenia);
-  // Consulto en la BBDD si existe el usuario
+
+  // Consulto en la BBDD si existe el usuarios
   const rows = await pool.query('SELECT * FROM usuario WHERE email = ?', [email]);
-  console.log(req.body);
   // Si existe el usuario
   if (rows.length > 0) {
     const user = rows[0];
+
     // Valido si la password introducida coincide con la almacenada en la BBDD
     const validPassword = await password.matchPassword(contrasenia, user.contraseña);
-    console.log(contrasenia, user.contraseña);
     if (validPassword) {
-      console.log(validPassword);
+      done(null, user, req.flash('success', '¡Bienvenido/a a Music Review, ' + user.nombreusuario + '!'));
     } else {
-      console.log('no validpassword');
+      done(null, false, req.flash('message', 'Contraseña incorrecta.'));
     }
-    // if (validPassword) {
-      // done(null, user, req.flash('success', 'Welcome ' + user.nombreusuario));
-    // } else {
-      // done(null, false, req.flash('message', 'Incorrect password'));
-    // }
-  // } else {
-    // return done(null, false, req.flash('message','The username does not exists'));
+  } else {
+    return done(null, false, req.flash('message','No existen usuarios registrados para el email proporcionado.'));
   }
 }));
 

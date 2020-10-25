@@ -67,7 +67,7 @@ body > .container-1__perfil {
 .datos__hijos__perfil > .form__perfil {
   height: 100%;
   width: 100%;
-  padding-top: 23%;
+  padding-top: 45%;
 }
 
 .info-user__perfil > h4 {
@@ -90,12 +90,13 @@ body > .container-1__perfil {
 }
 
 .img__perfil {
-  width: 15%;
+  width: 10%;
   align-self: center;
 }
 
 .perf__perfil {
   width: 50%;
+  border-radius: 100px !important;
 }
 
 .form-control__perfil {
