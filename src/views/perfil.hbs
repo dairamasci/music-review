@@ -11,10 +11,11 @@
             type="text" 
             name="nombre_usuario" 
             id="" 
-            class="form-control form-control-sm form-control__perfil mb-2" 
+            class="form-control form-control-sm form-control__perfil mb-2 mt-4" 
             placeholder="Nombre de usuario"
+            value="{{user.nombreusuario}}"
           >
-          <!-- Nombre -->
+          {{!-- <!-- Nombre -->
           <input 
             type="text" 
             name="nombre" 
@@ -29,15 +30,16 @@
             id="" 
             class="form-control form-control-sm  form-control__perfil mb-2" 
             placeholder="Apellido"
-          >
-          <!-- Fecha Nac -->
+          > --}}
+          {{!-- <!-- Fecha Nac -->
           <input 
             type="date" 
             name="fecha_nac" 
             id="" 
             class="form-control form-control-sm form-control__perfil mb-2" 
             placeholder="Fecha de nacimiento"
-          >
+            value="{{user.fecha_nacimiento}}"
+          > --}}
           <!-- email -->
           <input 
             type="email" 
@@ -45,6 +47,7 @@
             id="" 
             class="form-control form-control-sm form-control__perfil mb-2" 
             placeholder="Email"
+            value="{{user.email}}"
           >
           <!-- Contraseña -->
           <input 
@@ -56,19 +59,19 @@
           >
           <!-- Boton guardar -->
           <button 
-            class="btn btn-info btn-blue-grey btn-sm mt-4" 
+            class="btn btn-info btn-blue-grey btn-sm mt-3" 
             type="submit"
           >
             Guardar
           </button>
         </form>
       </div>
-      <div class="datos__hijos__perfil ml-3 mt-4">
+      <div class="datos__hijos__perfil ml-3 mt-1">
         <img 
-          src="/public/images/phPerfil.png" 
+          src="/public/images/fotoperfil-ej.jpg" 
           alt="" 
           srcset="" 
-          class="img-fluid rounded d-block perf__perfil"
+          class="img-fluid rounded d-block perf__perfil" style="border-radius: 60px;"
         >
         <a class="btn-floating btn-sm btn-secondary btn-circle boton__perfil">
           <i class="fas fa-pen"></i>
@@ -77,12 +80,12 @@
           <h4>Informacion de usuario</h4>
           <small class="p__perfil">
             <p class="p__perfil">Rango:</p>
-            <p class="p__perfil">Puntuacion:</p>
+            <p class="p__perfil">Puntuacion: {{user.puntuacion}}</p>
             <p class="p__perfil">Cantidad de reseñas:</p>
           </small>
         </div>
         <button class="btn btn-info btn-blue-grey btn-sm my-3 " type="button">
-          <a class="a__perfil" href="">
+          <a class="a__perfil" href="/cerrarSesion">
             Cerrar Sesion
           </a>
         </button>

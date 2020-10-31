@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="/public/css/pasarseVip.css">
   <link rel="stylesheet" href="/public/css/sobreNosotros.css">
   <link rel="stylesheet" href="/public/css/resenias.css">
+  <link rel="stylesheet" href="/public/css/mensajes.css">
 </head>
 
 <body>
@@ -48,24 +49,37 @@
             <a class="nav-link" href="/">Foro</a>
           </li>
         </ul>
+        {{#if user}}
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
             <a class="nav-link colorNaranja" href="/pasarseVip" tabindex="-1" aria-disabled="true">Pasarse a VIP</a>
           </li>
         </ul>
+        {{/if}}
         <ul class="navbar-nav my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/crearCuenta">Crear cuenta</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/loginWeb">Iniciar sesión</a>
-          </li>
+          {{#if user}}
+            <li class="nav-item">
+              <a class="nav-link" href="/perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cerrarSesion">Cerrar sesión</a>
+          {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/crearCuenta">Crear cuenta</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/loginWeb">Iniciar sesión</a>
+            </li>
+          
+            </li>
+          {{/if}}
         </ul>
 
       </div>
     </div> <!-- container -->
   </nav>
-
+  {{> mensajeExito}}
+  {{> mensajeError}}
   {{{ body }}}
 
   <footer class="bgNegro__footer text-white py-4">
@@ -77,8 +91,10 @@
         <ul class="col-2 list-unstyled mt-3 mr-auto">
           <li><a href="/" class="text-reset textFooter__footer">Home</a></li>
           <li><a href="/nuevaResenia" class="text-reset textFooter__footer">Reseñas</a></li>
-          <li><a href="/" class="text-reset textFooter__footer">Foro</a></li>
-          <li><a href="/pasarseVip" class="text-reset textFooter__footer colorNaranja__footer">Pasate a VIP!</a></li>
+          <li><a href="/" class="text-reset textFooter__footer">Foro</a></li>          
+          {{#if user}}
+            <li><a href="/pasarseVip" class="text-reset textFooter__footer colorNaranja__footer">Pasate a VIP!</a></li>
+          {{/if}}
         </ul>
         <ul class="col-3 list-unstyled mt-3 mr-auto">
           <li><a href="/sobreNosotros" class="text-reset textFooter__footer">Sobre nosotros</a></li>

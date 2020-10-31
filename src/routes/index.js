@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const express = require('express');
 const passport = require('passport');
+const { isLoggedIn } = require('../server/auth');
 // Crear un objeto que nos permite definir url o rutas del servidor
 const router = express.Router();
 
@@ -23,8 +24,8 @@ module.exports = app => {
   // router.post('/images/:image_id/comment', image.comment);
   // // eliminar una imagen
   // router.delete('/images/:image_id', image.remove);
-  router.get('/nuevaResenia', resenias.vistaCrearResenia);
-  router.post('/nuevaResenia', resenias.crearResenia)
+  router.get('/nuevaResenia', isLoggedIn, resenias.vistaCrearResenia);
+  router.post('/nuevaResenia', isLoggedIn, resenias.crearResenia)
 
   router.get('/crearCuenta', usuario.vistaCrearCuenta);
 
@@ -37,24 +38,30 @@ module.exports = app => {
   }));
 
 
-  router.get('/perfil', usuario.vistaPerfil);
+  router.get('/perfil', isLoggedIn, usuario.vistaPerfil);
 
-
+// obtener la vista
   router.get('/loginWeb', usuario.vistaLoginWeb);
+// postear datos del login
   router.post('/loginWeb', (req, res, next) => {
     passport.authenticate('local.signin', {
       successRedirect: '/',
-      faliureRedirect: '/loginWeb',
-      faliureFlash: true
+      failureRedirect: '/loginWeb',
+      failureFlash: true
     })(req, res, next);
-  })
+  });
+  // cerrar sesion
+  router.get('/cerrarSesion', isLoggedIn, (req, res) => {
+    req.logOut();
+    res.redirect('/loginWeb');
+  });
 
   router.get('/sobreNosotros', usuario.vistaSobreNosotros);
   router.get('/politicas-de-privacidad', usuario.vistaPoliticasPrivacidad);
   router.get('/terminos-y-condiciones', usuario.vistaTerminosCondiciones);
   router.get('/contacto', usuario.contacto);
 
-  router.get('/pasarseVip', usuario.vistaPasarseVip);
+  router.get('/pasarseVip', isLoggedIn, usuario.vistaPasarseVip);
 
   router.get('/resenias', resenias.vistaResenias);
 

@@ -13,6 +13,8 @@ const passport = require('passport');
 require('../helpers/passport');
 const { database } = require('../keys');
 
+// flash
+const flash = require('connect-flash');
 
 // importo las rutas
 const routes = require('../routes/index');
@@ -24,6 +26,7 @@ module.exports = app => {
   // como views está en otro directorio, concateno para decirle a express que view está en: src/views
   app.set('views', path.join(__dirname, '../views'));
   // configuro el motor de plantillas
+
   app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     partialsDir: path.join(app.get('views'), 'partials'),
@@ -34,11 +37,6 @@ module.exports = app => {
   app.set('view engine', '.hbs');
 
   // middlewares
-  app.use(morgan('dev'));
-  // app.use(multer({ dest: path.join(__dirname, '../public/uploads/temp') }).single('image'));
-  // para recibir datos de los formularios
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
   // configuro la session
   app.use(session({
     secret: 'nodejs',
@@ -47,8 +45,23 @@ module.exports = app => {
     // utilizo la base de datos para almancenar mi sesion
     store: new MySqlStore(database)
   }));
+  app.use(flash());
+  app.use(morgan('dev'));
+  // app.use(multer({ dest: path.join(__dirname, '../public/uploads/temp') }).single('image'));
+  // para recibir datos de los formularios
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.json());
   app.use(passport.initialize());
   app.use(passport.session());
+
+  // global variables
+  app.use((req, res, next) => { // variables globales
+    app.locals.success = req.flash('success');
+    app.locals.message = req.flash('message');
+    app.locals.user = req.user;
+    next();
+  });
+
 
   // routes
   routes(app);
