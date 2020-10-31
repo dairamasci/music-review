@@ -1,0 +1,195 @@
+.container__ver-res {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.container_contenido__ver-res {
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 30%;
+  padding: 20px;
+}
+
+.container_ver-res_izq {
+  margin: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+
+.container_ver-res_publi {
+  height: 100%;
+  width: 500px;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+.container_img_publi_ver-res {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img_publi_ver-res {
+  width: 80%;
+}
+
+.container_ver-res_ind {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(255, 255, 255, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.h4_titulo_ver-res {
+  color: white;
+  font-weight: bolder;
+}
+
+.footer_ver-res {
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.hr__separator_ver-res {
+  border-top: 0.1px solid rgb(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.contenido_ver-res {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: left;
+}
+
+.div_ver-res {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-top: 10px;
+  padding-left: 50px;
+}
+
+.div_foto_ver-res {
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.img_foto_ver-res {
+  width: 85%;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.p_nombre_banda_ver-res {
+  color: white;
+  font-size: medium;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.p_500_ver-res {
+  color: white;
+  overflow: hidden;
+}
+
+.container__texto-comentario {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(255, 255, 255, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.container__comentarios {
+  width: 100%;
+  height: fit-content;
+  background-color: rgb(255, 255, 255, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.p_datos_user_c {
+  color: white;
+  font-size: medium;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.p_contenido_c {
+  color: white;
+  overflow: hidden;
+}
+
+.container_coment_ind {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div_cont_c {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  padding-left: 30px; 
+}
+
+.div_dis-likes_c {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  padding: 15px;
+  margin-left: 20px;
+}
+
+.div_textarea-comentario {
+  width: 100%;
+  height: 130px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boton_comentar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.boton_comentar_resenia {
+  width: 120px;  
+}
+
+.form-control:focus {
+  border-color: #FF8546;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}

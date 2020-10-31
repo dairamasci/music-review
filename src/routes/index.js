@@ -64,6 +64,8 @@ module.exports = app => {
   router.get('/pasarseVip', isLoggedIn, usuario.vistaPasarseVip);
 
   router.get('/resenias', resenias.vistaResenias);
+  router.get('/resenias/:id', resenias.vistaVerResenia)
+  // router.get('/ver-resenia', resenias.vistaVerResenia);
 
   app.use(router);
 };

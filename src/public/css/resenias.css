@@ -116,6 +116,7 @@
 .h4_titulo_res {
   color: white;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .p_nombre_banda {

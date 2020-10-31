@@ -11,19 +11,29 @@ controller.vistaCrearResenia = async (req, res) => {
   res.render('nuevaResenia');
 };
 
+// Ver resenia GET vista
+controller.vistaVerResenia = async (req, res) => {
+
+  const datosResenia = await pool.query(
+    'SELECT r.id_reseña, r.foto_reseña, r.contenido, r.usuario_creador, r.puntuacion, r.titulo, r.id_absec, r.fecha_creacion, a.id_categoria, a.descripcion as nombre, c.descripcion as desc_categoria, u.vip, u.puntuacion FROM resenia r JOIN usuario u ON r.usuario_creador = u.nombreusuario JOIN absec a ON r.id_absec = a.id_absec JOIN categoria as c ON a.id_categoria = c.id_categoria WHERE r.id_reseña = ?',
+    [req.params.id],
+  );
+  
+  let rangoUsuariocreador;
+
+  if (datosResenia[0].vip) {
+    rangoUsuariocreador = 'VIP';
+  }
+
+  console.log({datosResenia});
+  res.render('ver-resenia', { datosResenia: datosResenia[0], rangoUsuariocreador });
+}
+
 // Reseñas GET vista
 controller.vistaResenias = async (req, res) => {
 
-  // const resenia = await pool.query(
-  //   'SELECT * FROM resenia'
-  // );
-  
-  // const usuario = await pool.query(
-  //   'SELECT * FROM usuario'
-  // );
-
   const datosResenia = await pool.query(
-    'SELECT r.foto_reseña, r.contenido, r.usuario_creador, r.puntuacion, r.titulo, r.id_absec, r.fecha_creacion, a.id_categoria, a.descripcion as nombre, c.descripcion as desc_categoria FROM resenia r JOIN usuario u ON r.usuario_creador = u.nombreusuario JOIN absec a ON r.id_absec = a.id_absec JOIN categoria as c ON a.id_categoria = c.id_categoria ORDER BY r.fecha_creacion DESC;'
+    'SELECT r.id_reseña, r.foto_reseña, r.contenido, r.usuario_creador, r.puntuacion, r.titulo, r.id_absec, r.fecha_creacion, a.id_categoria, a.descripcion as nombre, c.descripcion as desc_categoria FROM resenia r JOIN usuario u ON r.usuario_creador = u.nombreusuario JOIN absec a ON r.id_absec = a.id_absec JOIN categoria as c ON a.id_categoria = c.id_categoria ORDER BY r.fecha_creacion DESC;'
   );
   res.render('resenias', { datosResenia });
 };

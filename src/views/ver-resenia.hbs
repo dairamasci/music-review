@@ -1,0 +1,127 @@
+<!-- Contenedor principal -->
+<div class="container__ver-res">
+
+<div class="container_contenido__ver-res">
+
+    {{!-- resenia --}}
+    <div class="container_ver-res_izq">
+      <div class="container_ver-res_ind">
+        <h4 class="h4_titulo_ver-res mt-4">
+          {{ datosResenia.titulo }}
+        </h4>
+
+        <div class="contenido_ver-res">
+          {{!-- contenido de la reseña --}}
+          <div class="div_ver-res">
+            <div class="div_cont_ver-res">
+              <p class="p_nombre_banda_ver-res">
+                {{datosResenia.nombre}} 
+              </p>
+              <p class="p_500_ver-res">
+                {{datosResenia.contenido}}
+              </p>
+            </div>
+          </div>
+          {{!-- foto de la reseña --}}
+          <div class="div_foto_ver-res">
+            <img src="/public/images/bandaEjemplo1.jpg" alt="Foto de reseña" class="img_foto_ver-res">
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <a href="">
+            <i class="fas fa-thumbs-up text-white fa-2x mr-2"></i>
+          </a>
+          <a href="">
+            <i class="fas fa-thumbs-down text-white fa-2x ml-2"></i>
+          </a>
+        </div>
+
+        <hr class="hr__separator_ver-res my-0">
+
+        <div class="footer_ver-res">
+          <small class="mb-0">
+            {{datosResenia.puntuacion}} ptos. | 
+            {{datosResenia.usuario_creador}} | {{rangoUsuarioCreador}}
+            Rango usuario creador | 
+            {{datosResenia.fecha_creacion}} | 
+            {{datosResenia.desc_categoria}}
+
+            <a href="" class="ml-4 mr-2 mb-0">
+              <i class="fab fa-font-awesome-flag fa-lg text-white mb-4"></i>
+            </a>
+            <a href="" class="mb-0">
+              <i class="fas fa-share-alt fa-lg text-white mb-4"></i>
+            </a>
+          </small>
+        </div>
+
+      </div>
+
+      <div class="container__texto-comentario">
+        <h4 class="h4_titulo_ver-res mt-4">
+          Comentarios
+        </h4>
+      </div>
+      {{!-- {{#each comentario}} --}}
+      <div class="container__comentarios">
+        <div class="container_coment_ind">
+          <div class="div_cont_c">
+            <p class="p_datos_user_c">datos del usuario que comenta </p>
+            <p class="p_contenido_c">contenido
+              asdasdasdsa
+              asdsadasmd kasjdkasj laskldjk sk dks kj ad jsdjksald jpg}
+              kajskjdl ajsdk jksjd jksldjaskldjals jajdks aljkds kaldjsj kss
+            </p>
+            <br>
+          </div>
+          <div class="div_dis-likes_c">
+            <a href="">
+              <i class="fas fa-thumbs-up text-white fa-lg mr-3"></i>
+            </a>
+            <a href="">
+              <i class="fas fa-thumbs-down text-white fa-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{!-- {{/each}} --}}
+      {{#if user}}
+      <form action="" method="POST">
+        <div class="div_textarea-comentario">
+          <textarea class="form-control" name="comentario" cols="125" rows="6" placeholder="Ingrese aquí su comentario"></textarea>
+        </div>
+
+        <div class="boton_comentar">
+          <button class="btn btn-sm btn-info btn-block btn-blue-grey boton_comentar_resenia my-3" type="submit">
+            Comentar
+          </button>
+        </div>
+      </form>
+      {{/if}}
+
+    </div>
+    
+    {{!-- publicidad --}}
+    <div class="container_ver-res_publi">
+    {{!-- <div class="container_ver-res_publi" style="display: none;"> --}}
+      <div class="container_img_publi_ver-res">
+        <img src="/public/images/publicidad1.png" alt="Publicidad" class="img_publi_ver-res mb-4">
+        <img src="/public/images/publicidad2.png" alt="Publicidad" class="img_publi_ver-res mt-2">
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Video de fondo -->
+<video
+  autoplay
+  loop
+  poster="/public/images/fondoReseñas.png"
+  muted
+  class="video-fondo"
+>
+  <!-- Distintas resoluciones  -->
+  <source src="/public/media/fondoReviews.mp4" type="video/webm" />
+  <source src="/public/media/fondoReviews.mp4" type="video/mp4" />
+</video>
