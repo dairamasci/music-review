@@ -151,7 +151,7 @@ body > .container-1__foro__p {
 }
   
 .container__entrada > .container__imagen {
-    max-width: 21%;
+    width: 40%;
     height: auto;
     display: inline-flex;
     align-items: center;
@@ -159,8 +159,8 @@ body > .container-1__foro__p {
 }
   
 .container__imagen > img {
-    max-width: 80%;
-    max-height: 80%;
+    width: 70%;
+    height: 80%;
     margin: 2%;
     display: inline-flex;
 }
@@ -168,7 +168,7 @@ body > .container-1__foro__p {
 .container__entrada > .container__post {
     display: inline-flex;
     flex-direction: column;
-    width: 89%;
+    width: 135%;
     overflow: hidden;
     max-height: auto;
 }
@@ -220,8 +220,8 @@ body > .container-1__foro__p {
 .container__comandos > a {
     display: inline-flex;
     height: 100%;
-    width: 100%;
-    margin-bottom: 4%;
+    width: 75%;
+    margin-bottom: 55%;
 }
   
 .container__foro__body > .container__lista__publicidad {
