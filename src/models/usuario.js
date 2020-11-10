@@ -9,6 +9,7 @@ class Usuario {
     this.administrador = props.administrador;
     this.puntuacion = props.puntuacion;
     this.vip = props.vip;
+    this.rango = props.rango;
   }
 
   getName() {
