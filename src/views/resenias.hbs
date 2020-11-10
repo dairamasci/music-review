@@ -44,14 +44,14 @@
         
         <div class="container_res_ind__datos">
           <small>
-            {{puntuacion}} ptos. | {{usuario_creador}} | Rango usuario creador | {{fecha_creacion}} | {{desc_categoria}}
+            {{puntuacion}} ptos. | {{usuario_creador}} | {{rango}} | {{fecha_creacion}} | {{desc_categoria}}
           </small>
         </div>
 
       </div> 
     {{/each}}
     </div>
-
+    {{#if (publicidad)}}
     <div class="container_resenias_publi">
     {{!-- <div class="container_resenias_publi" style="display: none;"> --}}
       <div class="container_img_publi">
@@ -59,7 +59,7 @@
         <img src="/public/images/publicidad2.png" alt="Publicidad" class="img_publi mt-2">
       </div>
     </div>
-
+    {{/if}}
   </div>
 </div>
 

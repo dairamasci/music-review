@@ -13,7 +13,7 @@ passport.use('local.signin', new LocalStrategy({
 }, async (req, email, contrasenia, done) => {
 
   // Consulto en la BBDD si existe el usuarios
-  const rows = await pool.query('SELECT * FROM usuario WHERE email = ?', [email]);
+  const rows = await pool.query('SELECT * FROM usuario WHERE email = ?', [email]); 
   // Si existe el usuario
   if (rows.length > 0) {
     const user = rows[0];
@@ -21,7 +21,7 @@ passport.use('local.signin', new LocalStrategy({
     // Valido si la password introducida coincide con la almacenada en la BBDD
     const validPassword = await password.matchPassword(contrasenia, user.contraseña);
     if (validPassword) {
-      done(null, user, req.flash('success', '¡Bienvenido/a a Music Review, ' + user.nombreusuario + '!'));
+      done(null, user);
     } else {
       done(null, false, req.flash('message', 'Contraseña incorrecta.'));
     }
@@ -46,13 +46,14 @@ passport.use('local.signup', new LocalStrategy({
     administrador: body.admin === 'on' ? true : false,
     puntuacion: body.puntuacion || 0,
     vip: body.vip || '',
+    rango: 'Básico',
   });
   // Encripto password antes de almacenarla en la BBDD
   usuario.contraseña = await password.encryptPassword(body.contrasenia);
   // console.log(usuario);
   // Insertar datos en la BD - nuevo usuario
   const user = await pool.query(
-    'INSERT INTO `usuario` (`nombreusuario`, `email`, `contraseña`, `fotoperfil`, `id_sexo`, `fechanacimiento`, `administrador`, `puntuacion`, `vip`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+    'INSERT INTO `usuario` (`nombreusuario`, `email`, `contraseña`, `fotoperfil`, `id_sexo`, `fechanacimiento`, `administrador`, `puntuacion`, `vip`, `rango`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
     [
       usuario.nombreusuario,
       usuario.email,
@@ -62,10 +63,10 @@ passport.use('local.signup', new LocalStrategy({
       usuario.fechanacimiento,
       usuario.administrador,
       usuario.puntuacion,
-      usuario.vip
+      usuario.vip,
+      usuario.rango
     ]
   );
-  console.log(user);
   user.nombreusuario = usuario.nombreusuario;
   return done(null, user);
 }));
@@ -78,4 +79,3 @@ passport.deserializeUser(async (nombreusuario, done) => {
   const rows = await pool.query('SELECT * from usuario WHERE nombreusuario = ?', [nombreusuario]);
   done(null, rows[0]);
 });
-

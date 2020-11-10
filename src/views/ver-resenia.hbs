@@ -42,8 +42,8 @@
         <div class="footer_ver-res">
           <small class="mb-0">
             {{datosResenia.puntuacion}} ptos. | 
-            {{datosResenia.usuario_creador}} | {{rangoUsuarioCreador}}
-            Rango usuario creador | 
+            {{datosResenia.usuario_creador}} | 
+            {{datosResenia.rango}} | 
             {{datosResenia.fecha_creacion}} | 
             {{datosResenia.desc_categoria}}
 
@@ -58,42 +58,51 @@
 
       </div>
 
-      <div class="container__texto-comentario">
-        <h4 class="h4_titulo_ver-res mt-4">
-          Comentarios
-        </h4>
-      </div>
-      {{!-- {{#each comentario}} --}}
-      <div class="container__comentarios">
-        <div class="container_coment_ind">
-          <div class="div_cont_c">
-            <p class="p_datos_user_c">datos del usuario que comenta </p>
-            <p class="p_contenido_c">contenido
-              asdasdasdsa
-              asdsadasmd kasjdkasj laskldjk sk dks kj ad jsdjksald jpg}
-              kajskjdl ajsdk jksjd jksldjaskldjals jajdks aljkds kaldjsj kss
-            </p>
-            <br>
-          </div>
-          <div class="div_dis-likes_c">
-            <a href="">
-              <i class="fas fa-thumbs-up text-white fa-lg mr-3"></i>
-            </a>
-            <a href="">
-              <i class="fas fa-thumbs-down text-white fa-lg"></i>
-            </a>
+      <div id="lista_comentarios">
+        <div class="container__texto-comentario">
+          <h4 class="h4_titulo_ver-res mt-4">
+            Comentarios
+          </h4>
+        </div>
+
+        {{#each comentarios}}
+        <div class="container__comentarios">
+          <div class="container_coment_ind">
+            <div class="div_cont_c">
+              <p class="p_datos_user_c">{{ usuario_creador }} - {{ rango }} - {{ fecha_comentario }}</p>
+              <p class="p_contenido_c">
+                {{ contenido }}
+              </p>
+              <br>
+            </div>
+            <div class="div_dis-likes_c">
+              <a href="">
+                <i class="fas fa-thumbs-up text-white fa-lg mr-3"></i>
+              </a>
+              <a href="">
+                <i class="fas fa-thumbs-down text-white fa-lg"></i>
+              </a>
+            </div>
           </div>
         </div>
+        {{/each}}
       </div>
-      {{!-- {{/each}} --}}
+
       {{#if user}}
-      <form action="" method="POST">
+      <form action="/ver-resenia" method="POST">
         <div class="div_textarea-comentario">
-          <textarea class="form-control" name="comentario" cols="125" rows="6" placeholder="Ingrese aquí su comentario"></textarea>
+          <textarea 
+            class="form-control" 
+            name="comentario" 
+            cols="125"
+            rows="6" 
+            placeholder="Ingrese aquí su comentario"
+            id="comentario"
+          ></textarea>
         </div>
 
         <div class="boton_comentar">
-          <button class="btn btn-sm btn-info btn-block btn-blue-grey boton_comentar_resenia my-3" type="submit">
+          <button id="comentar_resenia" data-id="{{ datosResenia.id_reseña }}" class="btn btn-sm btn-info btn-block btn-blue-grey boton_comentar_resenia my-3" type="submit">
             Comentar
           </button>
         </div>
@@ -103,6 +112,7 @@
     </div>
     
     {{!-- publicidad --}}
+    {{#if (publicidad)}}
     <div class="container_ver-res_publi">
     {{!-- <div class="container_ver-res_publi" style="display: none;"> --}}
       <div class="container_img_publi_ver-res">
@@ -110,7 +120,7 @@
         <img src="/public/images/publicidad2.png" alt="Publicidad" class="img_publi_ver-res mt-2">
       </div>
     </div>
-
+    {{/if}}
   </div>
 </div>
 <!-- Video de fondo -->
