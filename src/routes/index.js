@@ -68,6 +68,7 @@ module.exports = app => {
   router.get('/resenias/:id', resenias.vistaVerResenia);
   // router.get('/ver-resenia', resenias.vistaVerResenia);
   
+  router.post('/resenias/:id', resenias.insertarComentario);
 
   // Foro
   router.get('/homeForo', foro.vistaHomeForo);
