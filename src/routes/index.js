@@ -10,6 +10,7 @@ const home = require('../controllers/home');
 const resenias = require('../controllers/resenias');
 const usuario = require('../controllers/usuarios');
 // const image = require('../controllers/image');
+const foro = require('../controllers/foro');
 
 module.exports = app => {
   // home
@@ -65,7 +66,13 @@ module.exports = app => {
 
   router.get('/resenias', resenias.vistaResenias);
   router.get('/resenias/:id', resenias.vistaVerResenia);
+  // router.get('/ver-resenia', resenias.vistaVerResenia);
+  
   router.post('/resenias/:id', resenias.insertarComentario);
 
+  // Foro
+  router.get('/homeForo', foro.vistaHomeForo);
+  router.get('/entrada', foro.vistaVerEntrada);
+  router.get('/nuevaEntrada', isLoggedIn, foro.vistaNuevaEntrada)
   app.use(router);
 };
