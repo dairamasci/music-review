@@ -2,7 +2,7 @@
 const path = require('path');
 const exphbs = require('express-handlebars');
 const morgan = require('morgan');
-// const multer = require('multer');
+const multer = require('multer');
 const express = require('express');
 const errorHandler = require('errorhandler');
 
@@ -47,7 +47,7 @@ module.exports = app => {
   }));
   app.use(flash());
   app.use(morgan('dev'));
-  // app.use(multer({ dest: path.join(__dirname, '../public/uploads/temp') }).single('image'));
+  app.use(multer({ dest: path.join(__dirname, '../public/uploads/temp') }).single('imagen-resenia'));
   // para recibir datos de los formularios
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());

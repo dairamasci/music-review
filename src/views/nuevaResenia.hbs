@@ -1,10 +1,11 @@
-<div class="container-1__nueva">
-  <!-- Contenedor del login -->
+<form class=" container-1__nueva " action="/nuevaResenia" method="POST" enctype="multipart/form-data">
+  {{!-- <div class="container-1__nueva"> --}}
+    <!-- Contenedor del login -->
   <div class="container__hijos-izq__nueva-r ml-5">
     <div class="container__nueva-resenia">
       <h2 class="mb-4">Nueva reseña</h2>
-      <!-- Formulario -->
-      <form class="text-center form__resenia" action="/nuevaResenia" method="POST">
+        <!-- Formulario -->
+        <div class="text-center form__resenia">
         <!-- Nombre -->
         <input 
           type="text" 
@@ -50,28 +51,32 @@
         >
           Crear
         </button>
-        
-      </form>
+          
+        {{!-- </form> --}}
+      </div>
     </div>
   </div>
   <!-- Imagen de reseña -->
   <div class="container__hijos-der__nueva-r mr-5">
     <div class="my-class">
-      <img src="/public/images/bandaEjemplo1.jpg" alt="" srcset="" class="img__reseña rounded-circle">
+      <img src="/public/images/bandaEjemplo1.jpg" alt="" srcset="" id="imagen2" class="img__reseña rounded-circle">
         <div class="d-flex justify-content-center custom-file">
-          <label class="custom-file-upload">
-            <input 
-              type="file"/
-              name="imagen-resenia"
-            >
-            <i class="fas fa-pencil-alt text-gray"></i>
-          </label>
+          {{!-- <form enctype="multipart/form-data"> --}}
+            <label class="custom-file-upload">
+              <input 
+                type="file"
+                name="imagen-resenia"
+                id="img_nuevaResenia"
+              >
+              <i class="fas fa-pencil-alt text-gray"></i>
+            </label>
+          {{!-- </form> --}}
         </div>
     </div>
   </div>
-  
-</div>
-
+    
+  {{!-- </div> --}}
+</form>
 <!-- Video de fondo -->
 <video
   autoplay
