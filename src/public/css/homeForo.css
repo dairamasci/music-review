@@ -1,0 +1,236 @@
+body > .container-1__foro__p {
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 5.3%;
+  margin-bottom: 10%;
+}
+
+.container-1__foro__p > .container__foro__p {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%; 
+    margin: 0;
+}
+  
+.container__foro__p > .container__controles__p {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 60px;
+    width: 100%;
+    padding: 0;
+}
+
+.container__controles__p > .botones {
+    height: 100%;
+    width: 40%;
+    justify-content: center;
+    align-content: center;
+}
+  
+.botones > a > img {
+    width: 10%;
+    height: 90%;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    align-self: center;
+    justify-content: center;
+}
+  
+.container__controles__p > .dropdown__categorias{
+    text-align: center;
+    width: 30%;
+    height: 70px;
+    display: inline-flex;
+    margin-top: 1px;
+}
+  
+.container__controles__p > .dropdown__categorias > .btn-work { 
+    width: 75%;
+    height: 66%;
+    margin: 3%;
+    padding: 0;
+    display: inline-block;
+    line-height: 50px;
+    text-align: center;
+}
+  
+.container__controles__p > .dropdown__categorias > .btn-work.dropdown-toggle {
+    background-color: grey !important;
+    display: inline-block;
+    margin-left: 0%;
+}
+  
+.dropdown__categorias > .dropdown-menu {
+    min-width: 20%;
+    margin-left: .39%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+    
+.dropdown__categorias > .dropdown-menu.show {
+    display: inline-block;
+    
+}
+  
+.container__controles__p > .barra__busqueda {
+    text-align: center;
+    width: 30%;
+}
+
+.fa-search {
+    color: white;
+}
+
+.container__foro__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    margin-top: 2%;
+}
+
+.container__foro__body > .container__lista__entradas__p {
+    width: 62.5%;
+    height: 90%;
+    display: flex;
+    flex-flow: column;
+    margin: 40px;
+}
+
+.container__lista__entradas__p > .container__full__entrada {
+    display: flex;
+    flex-flow: column;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.15);
+    margin-bottom: 2%;
+}
+  
+.container__full__entrada > .container__entrada {
+    height: 90%;
+    display: flex;
+    flex-flow: row;
+    position: relative;
+}
+  
+.container__full__entrada > .container__entrada__stats {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    border-top: 1px solid rgba(180, 180, 180, 0.4);
+}
+  
+.container__entrada__stats > p {
+    display: inline-flex;
+    color: white;
+    font-size: 80%;
+    margin: 1%;
+    font-weight: 400;
+}
+  
+.container__entrada > .container__imagen {
+    width: 40%;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.container__imagen > img {
+    width: 70%;
+    height: 80%;
+    margin: 2%;
+    display: inline-flex;
+}
+  
+.container__entrada > .container__post {
+    display: inline-flex;
+    flex-direction: column;
+    width: 135%;
+    overflow: hidden;
+    max-height: auto;
+}
+  
+.container__post > .cuerpo {
+    display: inline-flex;
+    overflow: hidden;
+}
+  
+.cuerpo > p {
+    margin-left: 3%;
+    color: white;
+    margin-right: 3%;
+    overflow: hidden;
+    display: inline-flex;
+}
+  
+.container__post > .titulo {
+    display: inline-flex;
+    height: auto;
+    margin-top: 1.8%;
+    justify-content: center;
+}
+  
+.titulo > h4 {
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    text-align: center;
+}
+  
+.container__entrada > .container__comandos {
+    display: flex;
+    flex-flow: column;
+    width: 120px;
+    height: 100%;
+    margin-top: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+  
+  
+.container__comandos > a {
+    display: inline-flex;
+    height: 100%;
+    width: 75%;
+}
+  
+.container__foro__body > .container__lista__publicidad {
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    justify-content: center;
+    padding: 88px;
+}
+
+.container__lista__publicidad > .container__publicidad__hijo {
+    width: 100%;
+    display: inline-flex;
+    margin-bottom: 31px;
+    margin-left: 0%;
+    align-content: center;
+    justify-content: center;
+}
+
+.container__publicidad__hijo > a > img {
+    width: 90%;
+    height: 100%;
+    margin-top: 0%;
+}
+
+.container__publicidad__hijo > a {
+    width: 100%;
+}
