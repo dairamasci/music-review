@@ -17,27 +17,18 @@ module.exports = app => {
   router.get('/', home.index);
   // traer una imagen por id
   router.get('/user/:nombreusuario', home.user);
-  // // subir una imagen
-  // router.post('/usuario', usuario.crear);
-  // // dar like a una imagen
-  // router.post('/images/:image_id/like', image.like);
-  // // comentar en una imagen
-  // router.post('/images/:image_id/comment', image.comment);
-  // // eliminar una imagen
-  // router.delete('/images/:image_id', image.remove);
+
   router.get('/nuevaResenia', isLoggedIn, resenias.vistaCrearResenia);
-  router.post('/nuevaResenia', isLoggedIn, resenias.crearResenia)
+  router.post('/nuevaResenia', isLoggedIn, resenias.crearResenia);
+  router.post('/image', resenias.imagen);
 
   router.get('/crearCuenta', usuario.vistaCrearCuenta);
-
-  // router.post('/crearCuenta', usuario.crearCuenta);
 
   router.post('/crearCuenta', passport.authenticate('local.signup', {
     successRedirect: '/',
     faliureRedirect: 'crearCuenta',
     faliureFlash: true
   }));
-
 
   router.get('/perfil', isLoggedIn, usuario.vistaPerfil);
 
@@ -63,10 +54,10 @@ module.exports = app => {
   router.get('/contacto', usuario.contacto);
 
   router.get('/pasarseVip', isLoggedIn, usuario.vistaPasarseVip);
+  router.post('/pasarseVip', isLoggedIn, usuario.pasarseVip);
 
   router.get('/resenias', resenias.vistaResenias);
   router.get('/resenias/:id', resenias.vistaVerResenia);
-  // router.get('/ver-resenia', resenias.vistaVerResenia);
   
   router.post('/resenias/:id', resenias.insertarComentario);
 

@@ -9,12 +9,11 @@
 
   <div class="container_contenido">
     <div class="container_resenias_izq">
-    {{#each datosResenia}}    
-      {{!-- primer reseña --}}
+    {{#each datosResenia}}
       <div class="container_res_ind">
         <div class="container_res_ind__resenia">
           <div class="div_foto_res">
-            <img src="/public/images/bandaEjemplo1.jpg" alt="Foto de reseña" class="img_foto_res">
+            <img src="/public/uploads/{{foto_reseña}}" alt="Foto de reseña" class="img_foto_res">
           </div>
 
           <div class="div_res">
@@ -51,7 +50,7 @@
       </div> 
     {{/each}}
     </div>
-    {{#if (publicidad)}}
+    {{#if publicidad}}
     <div class="container_resenias_publi">
     {{!-- <div class="container_resenias_publi" style="display: none;"> --}}
       <div class="container_img_publi">

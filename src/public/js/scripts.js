@@ -48,3 +48,13 @@ $('#comentar_resenia').click(function (e) {
     })
     .fail(() => console.log('error'))
 });
+
+$('#img_nuevaResenia').on('change', function () {
+  var fileReader = new FileReader();
+
+  fileReader.onload = function () {
+    var result = fileReader.result;  // data <-- in this var you have the file data in Base64 format
+    $("#imagen2").attr("src", result);
+  }
+  fileReader.readAsDataURL($('#img_nuevaResenia').prop('files')[0]);
+});
